@@ -136,6 +136,10 @@ if __name__ =="__main__":
 	accuracy0 = 1.0*np.sum([1 if train_res[i]==trainY[i] else 0 for i in range(len(train_res))])/len(trainY)
 	print("train Accuracy: {}%".format(accuracy0*100))
 
+	test2 =np.array([[0,0,0],[-1,0,1],[0.5,-0.5,0],[-1,0,0],[0,0,-1]])
+	test2_res,probs = predict(model,test2)
+	print test2_res,probs 
+
 	test_res,probs = predict(model,tX)
 	accuracy = 1.0*np.sum([1 if test_res[i]==ty[i] else 0 for i in range(len(test_res))])/len(ty)
 	print("test Accuracy: {}%".format(accuracy*100))
